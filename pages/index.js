@@ -6,7 +6,24 @@ export default function Home() {
       <Head>
         <title>Google</title>
         <link rel="icon" href="/favicon.ico" />
-      </Head>
+          </Head>
+          
+          {/* Header */}
+          <header>
+              <div className="flex space-x-4 items-center">
+                <p>About</p>
+                <p>Store</p>
+              </div>
+                
+              <div className="flex space-x-4 items-center">
+                <p>Gmail</p>
+                <p>Images</p>
+              </div>
+          </header>
+
+          {/* Body */}
+
+          {/* Footer */}
 
     </div>
   )
