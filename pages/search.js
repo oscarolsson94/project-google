@@ -10,7 +10,6 @@ const Search = () => {
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
 
-            {/* Header */}
             <Header />
 
             {/* Search Results */}
