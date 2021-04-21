@@ -1,12 +1,22 @@
 import React, { useRef } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import XIcon from '@heroicons/react/solid/index'
+import { XIcon, MicrophoneIcon, SearchIcon } from '@heroicons/react/solid';
 
 const Header = () => {
 
     const router = useRouter();
     const searchInputRef = useRef(null);
+
+    const search = e => {
+        e.preventDefault();
+
+        const term = searchInputRef.current.value;
+
+        if (!term) return;
+
+        router.push(`/search?term=${term}`);
+    }
 
     return (
         <header>
@@ -23,6 +33,9 @@ const Header = () => {
                     className="h-7 sm:mr-3 text-gray-500 cursor-pointer transition duration-100 transform hover:scale-125"
                     onClick={() => searchInputRef.current.value = ""}
                 />
+                <MicrophoneIcon className="mr-3 h-6 hidden sm:inline-flex text-blue-500 border-l-2 pl-4 border-gray-300" />
+                <SearchIcon className="h-6 text-blue-500 hidden sm:inline-flex" />
+                <button hidden type="submit" onClick={search} >Search</button>
             </form>
         </header>
     );
