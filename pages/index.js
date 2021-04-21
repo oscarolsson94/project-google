@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Avatar from '../components/Avatar';
 import { MicrophoneIcon, ViewGridIcon } from "@heroicons/react/solid";
 import Image from 'next/image';
+import { SearchIcon } from "@heroicons/react/outline";
 
 export default function Home() {
   return (
@@ -35,6 +36,11 @@ export default function Home() {
                   height={100}
                   width={300}
               />
+              <div className="flex w-full mt-5 hover:shadow-lg focus-within:shadow-lg max-w-md " >
+                  <SearchIcon className="h-5 mr-3 text-gray-500" />
+                  <input type="text" className="flex-grow focus:outline-none" />
+                  <MicrophoneIcon className="h-5" />
+              </div>
           </form>
 
           {/* Footer */}
