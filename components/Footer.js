@@ -12,14 +12,14 @@ const Footer = () => {
                     <GlobeIcon className="h-5 mr-1 text-green-700" /> Carbon neutral since 2007
                 </div>
                 <div className="flex justify-center space-x-8 whitespace-nowrap md:justify-self-start" >
-                    <p>Advertising</p>
-                    <p>Business</p>
-                    <p>How Search works</p>
+                    <p className="link">Advertising</p>
+                    <p className="link">Business</p>
+                    <p className="link">How Search works</p>
                 </div>
                 <div className="flex justify-center space-x-8 md:ml-auto">
-                    <p>Privacy</p>
-                    <p>Terms</p>
-                    <p>Settings</p>
+                    <p className="link">Privacy</p>
+                    <p className="link">Terms</p>
+                    <p className="link">Settings</p>
                 </div>
             </div>
         </footer>
