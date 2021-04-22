@@ -2,6 +2,8 @@ import Head from 'next/head';
 import React from 'react';
 import Header from '../components/Header';
 import { API_KEY, CONTEXT_KEY } from '../keys';
+import Response from '../Response';
+
 
 const Search = ({ results }) => {
     console.log(results);
@@ -23,8 +25,9 @@ export default Search;
 
 export async function getServerSideProps(context) {
     const useDummyData = false;
+    const startIndex = context.query.start || "0";
 
-    const data = await fetch(`https://www.googleapis.com/customsearch/v1?key=${API_KEY}&cx=${CONTEXT_KEY}&q=${context.query.term}`)
+    const data = useDummyData ? Response : await fetch(`https://www.googleapis.com/customsearch/v1?key=${API_KEY}&cx=${CONTEXT_KEY}&q=${context.query.term}&start=${startIndex}`)
         .then(response => response.json());
     
     // After the server has rendered, pass the results to the client
